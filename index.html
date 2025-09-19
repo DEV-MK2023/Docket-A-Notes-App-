@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- UI  -->
+  <link rel="stylesheet" href="./assets/css/loader.css" />
+  <!-- Title Tag -->
+  <title>Docket Notes</title>
+  <!-- FlatIcon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- PreLoader -->
+  <div id="preLoader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Auth -->
+  <section id="loginPage">
+    <div class="login-container">
+      <h2 id="authHeading"></h2>
+      <p id="subtitle"></p>
+      <div id="error-notification">
+        <p id="error"></p>
+      </div>
+      <form class="login-form" id="authForm">
+        <input type="text" placeholder="Full Name" name="fullName" id="fullName" />
+        <input type="email" placeholder="Email address" name="email" id="email" />
+        <input type="password" placeholder="Password" name="password" id="password" />
+        <input type="password" placeholder="Conform Password" name="conformPassword" id="conformPassword" />
+        <button type="submit" id="AuthBtn">Continue</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="container" id="app">
+    <aside>
+      <div class="logo-container">
+        <a href="/" class="logo">docket</a>
+      </div>
+      <div>
+        <div class="primary-btn" id="plusBtn">
+          <i class="fi fi-br-plus-small"></i>
+        </div>
+        <ul class="colors" id="colors">
+          <li class="color1 color" data-color="#e6ba6c" style="background-color: #e6ba6c"></li>
+          <li class="color2 color" data-color="#f59475" style="background-color: #f59475"></li>
+          <li class="color3 color" data-color="#e4ee90" style="background-color: #e4ee90"></li>
+          <li class="color4 color" data-color="#b792fe" style="background-color: #b792fe"></li>
+          <li class="color5 color" data-color="aqua" style="background-color: aqua"></li>
+          <li class="color6 color" data-color="#ea4c89" style="background-color: #ea4c89"></li>
+        </ul>
+      </div>
+    </aside>
+    <section class="inner-container">
+      <header>
+        <button id="menuBtn" class="hamburger">
+          ☰
+        </button>
+
+        <div class="search-wrapper" style="position: relative; width: 100%;">
+          <div class="input-box">
+            <i class="fi fi-br-search"></i>
+            <input type="text" id="inputBox" placeholder="Search" />
+          </div>
+          <ul id="history"></ul>
+        </div>
+
+
+        <div class="weatherDiv" id="weatherDiv">
+          <!-- Getting Dynamically -->
+          <span class="weather" id="weather">Loading...</span>
+
+          <ul class="menu" id="weatherMenu">
+
+          </ul>
+        </div>
+        <div class="profile">
+          <img src="./assets/img/profile_img.jpeg" alt="profile-img" class="profile-img" id="profileImg" />
+          <ul class="menu" id="profileMenu">
+            <li><i class="fi fi-rr-user"></i> <span>Profile</span></li>
+            <li id="settingsBtn"><i class="fi fi-rr-settings"></i> <span>Settings</span></li>
+            <li id="logoutBtn"><i class="fi fi-rr-sign-out-alt"></i> <span>Logout</span></li>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <h1>notes</h1>
+        <span>Pined</span>
+        <div class="notes" id="pinedNotes">
+          <!-- Fetch data -->
+        </div>
+        <span>Other</span>
+        <div class="notes" id="notes">
+          <!-- Fetch data -->
+        </div>
+      </main>
+    </section>
+  </section>
+  <!-- Profile Popup -->
+  <div class="overlay" id="profileOverlay">
+    <div class="profile-modal">
+      <button class="close-btn" id="closeProfileBtn">&times;</button>
+      <img src="./assets/img/profile_img.jpeg" alt="Profile" class="popup-profile-img" id="popupProfileImg" />
+
+      <h2 contenteditable="false" id="popupUserName">Your Name</h2>
+      <p id="popupUserEmail">your@email.com</p>
+
+      <div class="password-section">
+        <input type="password" id="popupUserPassword" value="12345678" disabled />
+        <button id="togglePassword">👁</button>
+      </div>
+
+      <div class="popup-actions">
+        <button id="editProfileBtn">Edit</button>
+        <button id="saveProfileBtn" style="display:none;">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Popup -->
+  <div id="popupOverlay" class="popup-overlay">
+    <div class="popup">
+      <span id="closePopup" class="close-btn">&times;</span>
+      <h2>Settings</h2>
+      <button id="clearHistoryBtn" class="action-btn danger">Clear Search History</button>
+      <button id="deleteAccountBtn" class="action-btn warning">Delete Account</button>
+    </div>
+  </div>
+
+
+  <!-- Custom JS -->
+  <script type="module" src="./assets/js/script.js"></script>
+</body>
+
+</html>
