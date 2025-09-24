@@ -340,7 +340,7 @@ async function success(position) {
   let latitude = position.coords.latitude;
   console.log(longitude, latitude);
   try {
-    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API}&q=${latitude},${longitude}`);
+    let res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API}&q=${latitude},${longitude}`);
     let data = await res?.json();
     let celcius = data.current.temp_c;
     let forenheit = data.current.temp_f;
@@ -603,5 +603,6 @@ document.addEventListener("click", (e) => {
     aside.classList.remove("active");
   }
 });
+
 
 
